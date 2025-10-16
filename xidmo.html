@@ -1,0 +1,50 @@
+<script>
+// Ustaların məlumatı + nömrə
+const ustaData = [
+  {
+    name: 'Rəşad Usta',
+    info: 'Soyuducu ustası — 3 illik təcrübə. Etibarlı və tez xidmət göstərir.',
+    rating: '⭐ 3.9 (53)',
+    tasks: ['Soyuducu təmiri','Soyuducu qaz doldurma','Soyuducu təmizliyi'],
+    phone: '+994506460886'
+  },
+  {
+    name: 'Aysel Xanim',
+    info: 'Təmizlik xidməti üzrə 5 illik təcrübə. Ev və ofis təmizliyi xidməti göstərir.',
+    rating: '⭐ 4.1 (27)',
+    tasks: ['Evdə təmizlik','Ofis təmizliyi','Pəncərə silmə'],
+    phone: '+994506417158'
+  },
+  {
+    name: 'Nicat Usta',
+    info: 'Elektrik ustası — kiçik və iri elektrik işləri üzrə ixtisaslaşıb.',
+    rating: '⭐ 4.5 (125)',
+    tasks: ['Elektrik işləri','Priz dəyişmə','Lampaların quraşdırılması'],
+    phone: '+994557055951'
+  }
+];
+
+document.querySelectorAll('.services .card').forEach((card,i)=>{
+  card.addEventListener('click', ()=>{
+    const existing = card.nextElementSibling;
+    if(existing && existing.classList.contains('usta-details')){ existing.remove(); return;}
+    document.querySelectorAll('.usta-details').forEach(e=> e.remove());
+    const details = document.createElement('div');
+    details.className = 'usta-details';
+    details.innerHTML = `
+      <div><strong>${ustaData[i].name}</strong></div>
+      <div>${ustaData[i].rating}</div>
+      <p>${ustaData[i].info}</p>
+      <div><strong>Görə bildiyi işlər:</strong></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        ${ustaData[i].tasks.map(t=>`<div style="background:var(--accent);color:white;padding:4px 8px;border-radius:6px;font-size:13px">${t}</div>`).join('')}
+      </div>
+      <a href="tel:${ustaData[i].phone}">
+        <button style="background:var(--accent);color:white;padding:8px 12px;border-radius:8px;border:none;cursor:pointer;margin-top:6px">📞 Çağır</button>
+      </a>
+    `;
+    card.insertAdjacentElement('afterend', details);
+  });
+});
+
+</script>
