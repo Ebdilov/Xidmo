@@ -1,58 +1,107 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hipermüraciətlər</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontakt Bome — Elektronika Mağazası</title>
 
     <style>
-        /* Sadə CSS */
-        a { color: blue; text-decoration: none; }
+        /* Sadə əsas stil */
+        body { font-family: Arial, sans-serif; background: #fff; color: #222; padding: 20px; }
+        header { margin-bottom: 15px; }
+        nav a { margin-right: 12px; font-weight: bold; }
+
+        /* 9. Fərqli rəngdə keçidlər üçün siniflər */
+        a.ext { color: #0b66c3; } /* xarici */
+        a.int { color: #0a8a3a; } /* daxili */
+        a.mail { color: #c34b0b; } /* email */
+
+        /* 10. Alt xəttin idarəsi */
+        a { text-decoration: none; }
         a:hover { text-decoration: underline; }
+
+        section { margin-top: 18px; padding-top: 8px; border-top: 1px solid #eee; }
+        .logo { vertical-align: middle; }
     </style>
 </head>
-
 <body>
 
-    <h1>Hipermüraciətlərin təşkili</h1>
+<header>
+    <!-- Inline SVG logo — "mən özüm əlavə etdim" -->
+    <a href="kontakt_bome.html" title="Kontakt Bome — ana səhifə">
+        <svg class="logo" width="120" height="40" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kontakt Bome loqosu">
+            <rect width="300" height="100" rx="12" fill="#0b66c3"></rect>
+            <text x="25" y="60" font-family="Arial" font-size="48" fill="#fff">Bome</text>
+            <text x="8" y="86" font-family="Arial" font-size="10" fill="#fff">Kontakt</text>
+        </svg>
+    </a>
+    <h1 style="display:inline-block; margin-left:10px; vertical-align: middle;">Kontakt Bome</h1>
+</header>
 
-    <!-- Naviqasiya menyusu (sadə) -->
+<!-- 8. Sadə naviqasiya menyusu -->
+<nav>
+    <a class="int" href="#xarici" title="Xarici saytlar bölməsi">Xarici</a> |
+    <a class="int" href="#haqq" title="Haqqımızda bölməsi">Haqqımızda</a> |
+    <a class="int" href="#elaqe" title="Əlaqə bölməsi">Əlaqə</a>
+</nav>
+
+<!-- 1. Üç fərqli xarici keçid (biri _blank ilə açılır) -->
+<section id="xarici">
+    <h2>Xarici keçidlər</h2>
     <p>
-        <a href="#xarici">Xarici</a> |
-        <a href="#daxili">Daxili</a> |
-        <a href="#sahifeici">Səhifədaxili</a> |
-        <a href="#elaqe">Əlaqə</a>
+        <a class="ext" href="https://www.google.com" target="_blank" title="Google-a keç">Google (yeni vərəqdə açılır)</a><br>
+        <a class="ext" href="https://www.amazon.com" title="Amazon mağazasına keç">Amazon</a><br>
+        <a class="ext" href="https://www.techradar.com" title="Tech saytına keç">TechRadar</a>
+    </p>
+</section>
+
+<!-- 2. Daxili keçid: haqqimizda.html -->
+<section id="haqq">
+    <h2>Daxili keçid</h2>
+    <p>
+        Mağazamız haqqında məlumat üçün:
+        <a class="int" href="haqqimizda.html" title="Haqqımızda səhifəsinə keç">Haqqımızda</a>
+    </p>
+</section>
+
+<!-- 3. Səhifədaxili keçid: eyni səhifədə bölmələr arasında keçid -->
+<section id="sahifeici">
+    <h2>Səhifədaxili keçid nümunəsi</h2>
+    <p>
+        Aşağıdakı keçid sizi səhifə içindəki konkret "Əlaqə" bölməsinə aparacaq:
+        <a href="#elaqe" title="Əlaqə bölməsinə get">Əlaqəyə keç</a>
+    </p>
+</section>
+
+<!-- 4 & 5. mailto + subject və şəkil üzərindən keçid -->
+<section id="elaqe">
+    <h2 id="elaqe">Əlaqə</h2>
+    <p>Bizimlə əlaqə saxla:</p>
+
+    <!-- 5. Şəkil üzərindən keçid (SVG loqonu linklə əhatə etdik) -->
+    <p>
+        <!-- Şəkil (inline SVG) üzərindən keçid — kliklə Google-a açılır (_blank) -->
+        <a href="https://www.google.com" target="_blank" title="Google-a keç (nümunə)"><!-- şəkil üzərindən keçid -->
+            <svg width="100" height="36" viewBox="0 0 250 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mağaza loqosu">
+                <rect width="250" height="90" rx="8" fill="#0a8a3a"></rect>
+                <text x="20" y="57" font-family="Arial" font-size="42" fill="#fff">KB</text>
+            </svg>
+        </a>
     </p>
 
-    <!-- 1. Üç xarici keçid -->
-    <h2 id="xarici">1. Xarici keçidlər</h2>
-    <a href="https://google.com" target="_blank" title="Google saytına keç">Google</a><br>
-    <a href="https://wikipedia.org" title="Wikipedia saytına keç">Wikipedia</a><br>
-    <a href="https://youtube.com" title="YouTube saytına keç">YouTube</a>
+    <!-- 4 & 5. mailto ilə subject parametri -->
+    <p>
+        E-poçt: 
+        <a class="mail" href="mailto:contact@kontaktbome.az?subject=Maraqlanan%20məhsul" title="Bizə e-poçt göndər">contact@kontaktbome.az</a>
+    </p>
 
-    <!-- 2. Daxili keçid -->
-    <h2 id="daxili">2. Daxili keçid</h2>
-    <a href="haqqimizda.html" title="Haqqımızda səhifəsinə keç">Haqqımızda səhifəsi</a>
+    <p>Telefon: +994 50 000 00 00</p>
+</section>
 
-    <!-- 3. Səhifədaxili keçid -->
-    <h2 id="sahifeici">3. Səhifədaxili keçid</h2>
-    <a href="#elaqe" title="Əlaqə hissəsinə keç">Əlaqə hissəsinə keç</a>
-
-    <!-- 4. mailto keçidi -->
-    <h2>4. Email keçidi</h2>
-    <a href="mailto:info@mysite.az?subject=Sual" title="Bizə mail göndər">
-        Bizə e-poçt göndər
-    </a>
-
-    <!-- 5. Şəkil üzərindən keçid -->
-    <h2>5. Şəkil üzərindən keçid</h2>
-    <a href="https://google.com" target="_blank" title="Google-a keç">
-        <img src="google.png" width="120" alt="Google loqosu">
-    </a>
-
-    <!-- Əlaqə hissəsi -->
-    <h2 id="elaqe">Əlaqə</h2>
-    <p>Bu, əlaqə bölməsidir.</p>
+<!-- Qaydalar / not -->
+<footer style="margin-top:20px; font-size:13px; color:#666;">
+    <p>Bu sadə nümunə Kontakt Bome elektronika mağazası üçün hazırlanmışdır. Bütün keçidlərdə <code>title</code> atributu istifadə olunub.</p>
+</footer>
 
 </body>
 </html>
