@@ -131,3 +131,10 @@ Akkumulyator → Elektrik enerjisi təmin edir
 Nəticə
 Aparılmış sistemli təhlil göstərir ki, avtomobil açıq, mürəkkəb və çoxfunksiyalı texniki sistemdir. Sistem xarici mühitdən enerji və idarəetmə siqnalları qəbul edir, daxili mexaniki və elektron proseslər vasitəsilə onları emal edir və nəticədə hərəkət və digər funksional çıxışlar yaradır. Struktur modelləşdirmə avtomobilin alt sistemlərini və onların qarşılıqlı əlaqəsini aydın şəkildə nümayiş etdirir.
 Əgər istəyirsinizsə, bunu müəllimin tələb etdiyi formada daha qısa və ya daha geniş (imtahanlıq formada) da hazırlaya bilərəm.
+
+
+
+
+
+
+https://chatgpt.com/s/t_699693651338819187f0290e4285771e
